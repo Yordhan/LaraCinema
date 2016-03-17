@@ -100,8 +100,9 @@
                                     <thead>
                                     <tr>
                                         <th>id</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
+                                        <th>Pseudo</th>
+                                        <th>Avatar</th>
+                                        <th>Ville</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -109,6 +110,7 @@
                                     <tr>
                                         <td>{{$value->id}}</td>
                                         <td>{{$value->username}}</td>
+                                        <td><img src="{{$value->avatar}}" style="width: 20%"></td>
                                         <td>{{$value->ville}}</td>
                                     </tr>
                                     @endforeach

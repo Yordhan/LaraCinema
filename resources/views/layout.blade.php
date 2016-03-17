@@ -862,6 +862,18 @@
                 <!-- Start: Sidebar Menu -->
                 <ul class="nav sidebar-menu">
                     <li class="sidebar-label pt20">Menu</li>
+                    <li class="active">
+                        <a href="{{route('homepage')}}">
+                            <span class="glyphicon glyphicon-home"></span>
+                            <span class="sidebar-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('directors_list')}}">
+                            <span class="fa fa-calendar"></span>
+                            <span class="sidebar-title">Réalisateurs</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="{{route('actors_list')}}">
                             <span class="fa fa-calendar"></span>
@@ -872,12 +884,6 @@
                         <a href="{{route('movies_list')}}">
                             <span class="glyphicon glyphicon-book"></span>
                             <span class="sidebar-title">Films</span>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="{{route('homepage')}}">
-                            <span class="glyphicon glyphicon-home"></span>
-                            <span class="sidebar-title">Dashboard</span>
                         </a>
                     </li>
                     <li class="sidebar-label pt15">Exclusive Tools</li>
