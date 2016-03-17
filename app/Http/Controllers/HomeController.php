@@ -31,6 +31,8 @@ class HomeController extends Controller
         $actor = new Actors();
         $nbActors = $actor->getNbActors();
         $ageMoyActors = $actor->getMoyenneAgeActors();
+//        $actorByCity = $actor->getActorsByCity();
+
 
         $comment = new Comments();
         $nbComments = $comment->getNbComments();
@@ -59,7 +61,8 @@ class HomeController extends Controller
                 'lastUsers' => $lastUsers,
                 'nbMovies' => $nbMovies,
                 'nbDirectors' =>  $nbDirectors,
-                'nbCategories' => $nbCategories
+                'nbCategories' => $nbCategories,
+//                'actorByCity' => $actorByCity
             ]);
     }
 }

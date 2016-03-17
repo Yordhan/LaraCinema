@@ -205,7 +205,7 @@
                     <div class="navbar-btn btn-group">
                         <button data-toggle="dropdown" class="btn btn-sm dropdown-toggle">
                             <span class="fa fa-bell-o fs14 va-m"></span>
-                            <span class="badge badge-danger">9</span>
+                            <span class="badge badge-danger">{{count(session('id_movies'))}}</span>
                         </button>
                         <div class="dropdown-menu dropdown-persist w350 animated animated-shorter fadeIn" role="menu">
                             <div class="panel mbn">
@@ -216,96 +216,16 @@
                                 </div>
                                 <div class="panel-body panel-scroller scroller-navbar scroller-overlay scroller-pn pn">
                                     <ol class="timeline-list">
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-dark light">
-                                                <span class="fa fa-tags"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Michael</b> Added to his store:
-                                                <a href="#">Ipod</a>
-                                            </div>
-                                            <div class="timeline-date">1:25am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-dark light">
-                                                <span class="fa fa-tags"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Sara</b> Added his store:
-                                                <a href="#">Notebook</a>
-                                            </div>
-                                            <div class="timeline-date">3:05am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-success">
-                                                <span class="fa fa-usd"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Admin</b> created invoice for:
-                                                <a href="#">Software</a>
-                                            </div>
-                                            <div class="timeline-date">4:15am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-success">
-                                                <span class="fa fa-usd"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Admin</b> created invoice for:
-                                                <a href="#">Apple</a>
-                                            </div>
-                                            <div class="timeline-date">7:45am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-success">
-                                                <span class="fa fa-usd"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Admin</b> created invoice for:
-                                                <a href="#">Software</a>
-                                            </div>
-                                            <div class="timeline-date">4:15am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-success">
-                                                <span class="fa fa-usd"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Admin</b> created invoice for:
-                                                <a href="#">Apple</a>
-                                            </div>
-                                            <div class="timeline-date">7:45am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-dark light">
-                                                <span class="fa fa-tags"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Michael</b> Added his store:
-                                                <a href="#">Ipod</a>
-                                            </div>
-                                            <div class="timeline-date">8:25am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-system">
-                                                <span class="fa fa-fire"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Admin</b> created invoice for:
-                                                <a href="#">Software</a>
-                                            </div>
-                                            <div class="timeline-date">4:15am</div>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <div class="timeline-icon bg-dark light">
-                                                <span class="fa fa-tags"></span>
-                                            </div>
-                                            <div class="timeline-desc">
-                                                <b>Sara</b> Added to his store:
-                                                <a href="#">Notebook</a>
-                                            </div>
-                                            <div class="timeline-date">3:05am</div>
-                                        </li>
+                                        @foreach(session('id_movies', []) as $movie)
+                                            <li class="timeline-item">
+                                                <div class="timeline-icon bg-dark light">
+                                                    <span class="fa fa-tags"></span>
+                                                </div>
+                                                <div class="timeline-desc">
+                                                    {{$movie}}
+                                                </div>
+                                            </li>
+                                         @endforeach
                                     </ol>
 
                                 </div>

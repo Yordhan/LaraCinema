@@ -160,4 +160,37 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel" id="pchart12">
+                        <div class="panel-heading">
+                              <span class="panel-icon">
+                                <i class="fa fa-play"></i>
+                              </span>
+                                <span class="panel-title"> Trailer</span>
+                        </div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" width="640" height="480" src="https://www.youtube-nocookie.com/embed/Lw_e0vF1IB4" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="panel" id="pchart7">
+                        <div class="panel-heading">
+                          <span class="panel-title text-info fw600">
+                            <i class="fa fa-pencil hidden"></i> Répartition des acteurs par villes</span>
+                        </div>
+                        <div class="panel-body pn">
+
+                            <div id="high-column" style="width: 100%; height: 197px; margin: 0 auto"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
 @endsection

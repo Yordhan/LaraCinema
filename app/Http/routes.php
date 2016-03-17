@@ -75,6 +75,12 @@ Route::group(['middleware' => ['web']], function () {
             'uses' => 'MoviesController@visible'
         ]);
 
+        // route pour mettre un film dans un panier
+        Route::get('/panier/{id}', [
+            'as' => 'movies_panier',
+            'uses' => 'MoviesController@panier'
+        ]);
+
         Route::get('/voir/{id}', [
             'as' => 'movies_voir',
             'uses' => 'MoviesController@voir'

@@ -73,7 +73,7 @@
             <img src="{{$actors->image}}" /><br />
             {{$actors->firstname}} {{$actors->lastname}}<br />
             Date de naissance :{{$actors->dob}}<br />
-            Nationalité : {{$actors->nationality}}
+            Nationalité : {{$actors->nationality}}<br />
             Ville : {{$actors->city}}
         </p>
         <p>

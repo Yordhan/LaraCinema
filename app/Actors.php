@@ -36,6 +36,21 @@ class Actors extends Model
     public function getMoyenneAgeActors(){
         $ageMoyActors = DB::table('actors')
             ->avg(DB::raw('TIMESTAMPDIFF( YEAR, dob, NOW())'));
-            return $ageMoyActors;
+            return number_format($ageMoyActors, 1);
     }
+
+    /**
+     * Compte le nombre d'acteurs par villes
+     * SELECT COUNT( city ) , city
+        FROM actors
+        GROUP BY city
+     */
+//    public function getActorsByCity() {
+//        $actorByCity = DB::table('actors')
+//            ->count('city')
+//            ->groupBy('city')
+//            ->get();
+//
+//        return $actorByCity;
+//    }
 }
