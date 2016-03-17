@@ -23,8 +23,26 @@ class Users extends Model
      */
     public function getUsers(){
         $nbUsers = DB::table('user')
+            ->where('enabled', 1)
             ->count();
 
         return $nbUsers;
     }
+
+    /**
+     * Permet de recuperer les derniers utilisateurs connectés
+     * SELECT username, ville
+        FROM user
+        ORDER BY lastActivity DESC
+        LIMIT 5
+     */
+    public function getLastUsers(){
+        $lastUsers = DB::table('user')
+            ->orderBy('lastActivity', 'desc')
+            ->limit(5)
+            ->get();
+        return $lastUsers;
+
+    }
+
 }

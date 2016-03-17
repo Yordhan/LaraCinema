@@ -8,6 +8,8 @@
 
 namespace App\Http\Controllers;
 use App\Actors;
+use App\Categories;
+use App\Directors;
 use App\Movies;
 use App\Comments;
 use App\Users;
@@ -20,9 +22,11 @@ class HomeController extends Controller
      */
     public function homepage(){
         $movie = new Movies();
-        $nbMovies = $movie->getNbMoviesActifs();
+        $nbMoviesAct = $movie->getNbMoviesActifs();
         $budgetTot = $movie->getBudgetTotal();
         $moyenneNote = $movie->getMoyenneNote();
+        $moyenneDuree = $movie->getMoyenneDuree();
+        $nbMovies = $movie->getNbMovies();
 
         $actor = new Actors();
         $nbActors = $actor->getNbActors();
@@ -33,16 +37,30 @@ class HomeController extends Controller
 
         $user = new Users();
         $nbUsers = $user->getUsers();
+        $lastUsers = $user->getLastUsers();
+
+        $director = new Directors();
+        $nbDirectors = $director->getNbDirectors();
+
+        $category = new Categories();
+        $nbCategories = $category->getNbCategories();
+
 
         return view('statique/welcome',
             [
-                'nbMovies' => $nbMovies,
+                'nbMoviesAct' => $nbMoviesAct,
                 'nbActors' => $nbActors,
                 'nbComments' => $nbComments,
                 'nbUsers' => $nbUsers,
                 'ageMoyActors' => $ageMoyActors,
                 'budgetTot' => $budgetTot,
-                'moyenneNote' => $moyenneNote
+                'moyenneNote' => $moyenneNote,
+                'moyenneDuree' => $moyenneDuree,
+                'lastUsers' => $lastUsers,
+                'nbMovies' => $nbMovies,
+                'nbDirectors' =>  $nbDirectors,
+                'nbCategories' => $nbCategories
             ]);
     }
 }
+

@@ -31,9 +31,21 @@ class Movies extends Model
         WHERE visible =1
      */
     public function getNbMoviesActifs(){
-        $nbMovies = DB::table('movies')
+        $nbMoviesAct = DB::table('movies')
                 ->where('visible', 1)
                 ->count();
+
+        return $nbMoviesAct;
+    }
+
+    /**
+     * Permet de recuperer le nombre de films
+     ** SELECT COUNT( * ) AS nb
+        FROM movies
+     */
+    public function getNbMovies(){
+        $nbMovies = DB::table('movies')
+            ->count();
 
         return $nbMovies;
     }
@@ -54,6 +66,17 @@ class Movies extends Model
         $moyenneNote = DB::table('movies')
             ->avg(DB::raw('note_presse'));
         return $moyenneNote;
+    }
+
+    /**
+     * Permet de recuperer la durée moyenne des films
+     * SELECT AVG(duree)
+     * FROM movies
+     */
+    public function getMoyenneDuree(){
+        $moyenneDuree = DB::table('movies')
+            ->avg(DB::raw('duree'));
+        return $moyenneDuree;
     }
 
 }

@@ -1,9 +1,9 @@
 @extends('layout')
 @section('content')
-        <a href="/">Page d'accueil</a>
+        <a href="/" style="display:block">Page d'accueil</a>
 
-        <div class="title">Liste de nos films</div>
-        <h4>
+        <h1 style="display: inline-block; margin-right: 16rem;">Liste de nos films</h1>
+        <h4 style="display: inline-block">
             <a href="{{route('movies_creer')}}">
                 Créer un film
             </a>

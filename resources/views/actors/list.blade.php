@@ -1,81 +1,55 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
-
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .content {
-            text-align: center;
-            display: inline-block;
-        }
-
-        .title {
-            font-size: 96px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: black;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        ul li {
-            display: inline-block;
-            margin-right: 0.8rem;
-            font-size: 1.8rem;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="content">
+@extends('layout')
+@section('content')
         <p>
             <a href="/">Page d'accueil</a>
         </p>
-        <div class="title">Liste des acteur</div>
-        @foreach($actors as $actor)
-            <p>
-                <a href="{{route("actors_voir",
-                [
-                    "id" => $actor->id
-                ]) }}">
-                    {{$actor->firstname }}
-                    {!!$actor->lastname !!}
-                </a>
-            </p>
-        @endforeach
-    </div>
+        <h1>Liste des acteur</h1>
+
+        <div class="panel-body pn">
+            <div class="table-responsive">
+                <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+                    <thead>
+                    <tr class="bg-light">
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Photo</th>
+                        <th>Date de naissance</th>
+                        <th>Ville</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($actors as $actor)
+                        <tr>
+                            <td>{{$actor->id}}</td>
+                            <td>
+                                <a href="{{route("actors_voir",
+                                [
+                                    "id" => $actor->id
+                                ]) }}">
+                                    {!!$actor->lastname !!}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{route("actors_voir",
+                                [
+                                    "id" => $actor->id
+                                ]) }}">
+                                {!!$actor->firstname !!}
+                            </td>
+                            <td class="w100"><img src="{{$actor->image}}" style="width:60%;" /></td>
+                            <td>{{$actor->dob}}</td>
+                            <td>{{$actor->city}}</td>
+                        </tr>
+                        @endforeach
+
+                </table>
+            </div>
+        </div>
     <hr>
     <a href="{{route('actors_creer')}}">
         Créer un acteur
     </a>
-</div>
-</body>
-</html>
+
+@endsection
+

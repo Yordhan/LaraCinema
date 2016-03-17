@@ -805,7 +805,7 @@
                                 <div class="media-links">
                                     <a href="#" class="sidebar-menu-toggle">User Menu -</a> <a href="pages_login(alt).html">Logout</a>
                                 </div>
-                                <div class="media-author">Michael Richards</div>
+                                <div class="media-author">Yordhan Stephanazzi</div>
                             </div>
                         </div>
                     </div>
@@ -863,22 +863,19 @@
                 <ul class="nav sidebar-menu">
                     <li class="sidebar-label pt20">Menu</li>
                     <li>
-                        <a href="pages_calendar.html">
+                        <a href="{{route('actors_list')}}">
                             <span class="fa fa-calendar"></span>
-                            <span class="sidebar-title">Calendar</span>
-              <span class="sidebar-title-tray">
-                <span class="label label-xs bg-primary">New</span>
-              </span>
+                            <span class="sidebar-title">Acteurs</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../README/index.html">
+                        <a href="{{route('movies_list')}}">
                             <span class="glyphicon glyphicon-book"></span>
-                            <span class="sidebar-title">Documentation</span>
+                            <span class="sidebar-title">Films</span>
                         </a>
                     </li>
                     <li class="active">
-                        <a href="dashboard.html">
+                        <a href="{{route('homepage')}}">
                             <span class="glyphicon glyphicon-home"></span>
                             <span class="sidebar-title">Dashboard</span>
                         </a>
