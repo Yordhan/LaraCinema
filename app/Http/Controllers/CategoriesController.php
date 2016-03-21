@@ -49,8 +49,22 @@ class CategoriesController extends Controller{
 
 
         $category = new Categories();
+
+        $file = $request->image;
+        // Si ma requete contient un fichier de name "image"
+
+        if($request->hasFile('image')) {
+            $filename = $file->getClientOriginalName(); // Récupère le nom original du fichier
+            $destinationPath = public_path() . '/uploads/categories'; // Indique ou stocker le fichier
+            $file->move($destinationPath, $filename); // Déplace le fichier
+
+            // ma colonne image qui sera le chemin vers mon fichier
+            $category->image = asset('uploads/categories/' . $filename);
+        }
+
         $category->title = $request->title;
         $category->description = $request->description;
+
 
         $category->save(); // save() permet de sauvegarder mon objet en bdd
 

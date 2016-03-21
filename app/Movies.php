@@ -79,4 +79,8 @@ class Movies extends Model
         return $moyenneDuree;
     }
 
+    public function categorie() {
+        return-$this->belongsTo('App\Categories');
+    }
+
 }

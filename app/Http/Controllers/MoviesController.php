@@ -76,8 +76,21 @@ class MoviesController extends Controller{
 
 
         $movie = new Movies();
+
+        $file = $request->image;
+        // Si ma requete contient un fichier de name "image"
+
+        if($request->hasFile('image')) {
+            $filename = $file->getClientOriginalName(); // Récupère le nom original du fichier
+            $destinationPath = public_path() . '/uploads/movies'; // Indique ou stocker le fichier
+            $file->move($destinationPath, $filename); // Déplace le fichier
+
+            // ma colonne image qui sera le chemin vers mon fichier
+            $movie->image = asset('uploads/movies/' . $filename);
+        }
+
+
         $movie->title = $title;
-        $movie->image = $image;
         $movie->synopsis = $synopsis;
         $movie->categories_id = $categories;
         $movie->save(); // save() permet de sauvegarder mon objet en bdd
@@ -150,10 +163,6 @@ class MoviesController extends Controller{
         return Redirect::route('movies_list');
     }
 
-//    public function viderPanier(Request $request, $id) {
-//        $tab = $request->session()->destroy('id_movies');
-//
-//    }
 
 
 }

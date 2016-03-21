@@ -1,59 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
-
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .content {
-            text-align: center;
-            display: inline-block;
-        }
-
-        .title {
-            font-size: 96px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: black;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        ul li {
-            display: inline-block;
-            margin-right: 0.8rem;
-            font-size: 1.8rem;
-        }
-    </style>
-</head>
-<body>
+@extends('layout')
+@section('content')
 <div class="container">
     <div class="content">
         <div class="title">Creation d'une catégorie</div>
@@ -69,7 +15,8 @@
             </div>
         @endif
 
-        <form method="post" action="{{route('categories_enregistrer')}}">
+        <form method="post" enctype="multipart/form-data" action="{{route('categories_enregistrer')}}">
+
             {{ csrf_field() }}
             <p>
                 <label for="title">Titre</label>
@@ -82,6 +29,12 @@
             </p>
 
             <p>
+                <label for="image">Image</label>
+                <input type="file" capture="capture" accept="image/*" name="image" id="image">
+            </p>
+
+
+            <p>
                 <button type="submit">Créer la catégorie</button>
             </p>
 
@@ -91,6 +44,4 @@
 
 
     </div>
-</div>
-</body>
-</html>
+@endsection

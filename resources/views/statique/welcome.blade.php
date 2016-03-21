@@ -182,11 +182,41 @@
                             <i class="fa fa-pencil hidden"></i> Répartition des acteurs par villes</span>
                         </div>
                         <div class="panel-body pn">
-
                             <div id="high-column" style="width: 100%; height: 197px; margin: 0 auto"></div>
-
                         </div>
                     </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <span class="panel-icon">
+                              <i class="fa fa-clock-o"></i>
+                            </span>
+                            <span class="panel-title"> 5 derniers commentaires</span>
+                        </div>
+                        <div class="panel-body ptn pbn p10">
+                            <ol class="timeline-list">
+                                <li class="timeline-item">
+                                    <div class="timeline-icon bg-dark light">
+                                        <span class="fa fa-tags"></span>
+                                    </div>
+                                    <div class="timeline-desc">
+                                        <b>Michael</b> Added to his store:
+                                        <a href="#">Ipod</a>
+                                    </div>
+                                    <div class="timeline-date">1:25am</div>
+                                </li>
+
+                            </ol>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>

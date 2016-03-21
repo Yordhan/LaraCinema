@@ -70,6 +70,9 @@
             {{$categories->title}}<br />
             Description :{{$categories->description}}<br />
         </p>
+        <p>
+            <img src="{{$categories->image}}" />
+        </p>
 
         <p>
             <a href="{{route('categories_supprimer', ['id' => $categories->id]) }}" style="font-weight: bold;">Supprimer la catégorie</a>

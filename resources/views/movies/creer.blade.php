@@ -45,7 +45,7 @@
                 {{--<button type="submit">Créer le film</button>--}}
             {{--</p>--}}
         {{--</form>--}}
-        <form method="post" action="{{route('movies_enregistrer')}}">
+        <form method="post" enctype="multipart/form-data" action="{{route('movies_enregistrer')}}">
             {{ csrf_field() }}
             <div class="panel-body bg-light p25 pb15">
                 <!-- Divider -->
@@ -80,10 +80,15 @@
                 </div>
                 <!-- end .section row section -->
 
+                {{--<div class="section">--}}
+                    {{--<label for="image" class="field prepend-icon">Image<br />--}}
+                        {{--<input type="text" name="image" id="image" class="gui-input">--}}
+                    {{--</label>--}}
+                {{--</div>--}}
+
                 <div class="section">
-                    <label for="image" class="field prepend-icon">Image<br />
-                        <input type="text" name="image" id="image" class="gui-input">
-                    </label>
+                    <label for="image">Image</label>
+                        <input type="file" capture="capture" accept="image/*" name="image" id="image">
                 </div>
                 <!-- end section -->
             </div>
@@ -102,3 +107,7 @@
 
 @endsection
 
+<p>
+    <label for="image">Image</label>
+    <input type="file" capture="capture" accept="image/*" name="image" id="image">
+</p>
