@@ -21,7 +21,17 @@
                     <tbody>
                         @foreach($actors as $actor)
                         <tr>
-                            <td>{{$actor->id}}</td>
+                            <td>{{$actor->id}}
+                                <a href="{{route("actors_panier", [
+                                    'id' => $actor->id
+                                ])}}">
+                                    @if(!array_key_exists($actor->id, session('id_actors', [])))
+                                        <i class="fa fa-star-o"></i>
+                                    @else
+                                        <i class="fa fa-star"></i>
+                                    @endif
+                                </a>
+                            </td>
                             <td>
                                 <a href="{{route("actors_voir",
                                 [

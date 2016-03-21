@@ -132,6 +132,12 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/editer/{id}', [
             'uses' => 'ActorsController@editer'
         ]);
+
+        // route pour mettre un acteur dans un panier
+        Route::get('/panier/{id}', [
+            'as' => 'actors_panier',
+            'uses' => 'ActorsController@panier'
+        ]);
     });
 
     Route::group(['prefix' => 'directors'], function(){

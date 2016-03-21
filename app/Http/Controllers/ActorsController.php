@@ -18,10 +18,13 @@ class ActorsController extends Controller{
      * Methode de controller
      * <=> Action de controller
      */
-    public function lister(){
+    public function lister(Request $request){
         $actors = Actors::all();
         //dump($actors);
         // retourne une vue
+
+        $id_actors = $request->session()->get("id_actors");
+
         return view("actors/list", [
             'actors' => $actors
         ]);
@@ -83,6 +86,38 @@ class ActorsController extends Controller{
     public function supprimer(Request $request, $id) {
         $actors = Actors::find($id);
         $actors->delete();
+
+        return Redirect::route('actors_list');
+    }
+
+    /**
+     * @param Request $request
+     * @param $id
+     * @return mixed
+     * Permet d'ajouter un acteur dans un panier
+     */
+    public function panier(Request $request, $id) {
+        $actor = Actors::find($id);
+
+        // 1. enregistrer en session l'id
+        // la requete fait appel a la session
+
+        $tab = $request->session()->get('id_actors', []);
+
+        if(array_key_exists($id, $tab)) {
+            unset($tab[$id]);
+            // supprime mon élément de tableau
+        }
+        else {
+            $tab[$id] = $actor->firstname . ' ' . $actor->lastname; // ajouter mon id dans le tableau
+        }
+
+        // put() permet d'enregistrer en session à base d'une clé (id_actors) et d'une valeur ($id)
+        $request->session()->put('id_actors', $tab);
+
+        // pour retirer un acteur des favoris
+
+        // 2. rediriger vers la liste des acteurs
 
         return Redirect::route('actors_list');
     }

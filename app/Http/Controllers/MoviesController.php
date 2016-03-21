@@ -129,7 +129,15 @@ class MoviesController extends Controller{
         // la requete fait appel a la session
 
         $tab = $request->session()->get('id_movies', []);
-        $tab[$id] = $movie->title ; // ajouter mon id dans le tableau
+
+        if(array_key_exists($id, $tab)) {
+            unset($tab[$id]);
+            // supprime mon élément de tableau
+        }
+        else {
+            $tab[$id] = $movie->title ; // ajouter mon id dans le tableau
+        }
+
 
         // Enregistrer mon tableau movies
 
@@ -141,6 +149,11 @@ class MoviesController extends Controller{
 
         return Redirect::route('movies_list');
     }
+
+//    public function viderPanier(Request $request, $id) {
+//        $tab = $request->session()->destroy('id_movies');
+//
+//    }
 
 
 }

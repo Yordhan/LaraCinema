@@ -212,7 +212,7 @@
                                 <div class="panel-menu">
                                     <span class="panel-icon"><i class="fa fa-clock-o"></i></span>
                                     <span class="panel-title fw600"> Recent Activity</span>
-                                    <button class="btn btn-default light btn-xs pull-right" type="button"><i class="fa fa-refresh"></i></button>
+                                    <button class="btn btn-default light btn-xs pull-right" type="button"><i class="fa fa-trash"></i></button>
                                 </div>
                                 <div class="panel-body panel-scroller scroller-navbar scroller-overlay scroller-pn pn">
                                     <ol class="timeline-list">
@@ -223,6 +223,7 @@
                                                 </div>
                                                 <div class="timeline-desc">
                                                     {{$movie}}
+
                                                 </div>
                                             </li>
                                          @endforeach
@@ -240,13 +241,13 @@
                     <div class="navbar-btn btn-group">
                         <button data-toggle="dropdown" class="btn btn-sm dropdown-toggle">
                             <span class="ad ad-radio-tower fs14 va-m"></span>
-                            <span class="badge">5</span>
+                            <span class="badge">{{count(session('id_actors'))}}</span>
                         </button>
                         <div class="dropdown-menu dropdown-persist w350 animated animated-shorter fadeIn" role="menu">
                             <div class="panel mbn">
                                 <div class="panel-menu">
                                     <div class="btn-group btn-group-justified btn-group-nav" role="tablist">
-                                        <a href="#nav-tab1" data-toggle="tab" class="btn btn-default btn-sm active">Notifications</a>
+                                        <a href="#nav-tab1" data-toggle="tab" class="btn btn-default btn-sm active">Acteurs</a>
                                         <a href="#nav-tab2" data-toggle="tab" class="btn btn-default btn-sm br-l-n br-r-n">Messages</a>
                                         <a href="#nav-tab3" data-toggle="tab" class="btn btn-default btn-sm">Activity</a>
                                     </div>
@@ -257,130 +258,16 @@
                                             <div class="media">
                                                 <a class="media-left" href="#"> <span class="glyphicon glyphicon-user text-info"></span> </a>
                                                 <div class="media-body">
-                                                    <h5 class="media-heading">New Registration
+                                                    @foreach(session('id_actors', []) as $actor)
+                                                    <h5 class="media-heading">{{$actor}}
                                                         <small class="text-muted"></small>
-                                                    </h5> Tyler Durden - 16 hours ago
+                                                     @endforeach
 
                                                 </div>
-                                                <div class="media-right">
-                                                    <div class="media-response"> Approve?</div>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-check text-success"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-remove"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <a class="media-left" href="#"> <span class="glyphicon glyphicon-shopping-cart text-success"></span> </a>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New Order
-                                                        <small class="text-muted"></small>
-                                                    </h5> <a href="#">Apple Ipod</a> - 4 hours ago
-                                                </div>
-                                                <div class="media-right">
-                                                    <div class="media-response"> Confirm?</div>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-check text-success"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-print"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <a class="media-left" href="#"> <span class="glyphicon glyphicon-comment text-system"></span> </a>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New Comment
-                                                        <small class="text-muted"></small>
-                                                    </h5> Mike - I loved your article!
-                                                </div>
-                                                <div class="media-right">
-                                                    <div class="media-response text-right"> Moderate?</div>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-check text-success"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <a class="media-left" href="#"> <span class="glyphicon glyphicon-star text-warning"></span> </a>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New Review
-                                                        <small class="text-muted"></small>
-                                                    </h5> Sammy Hilton - 4 hours ago
-                                                </div>
-                                                <div class="media-right">
-                                                    <div class="media-response"> Approve?</div>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-check text-success"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-remove"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <a class="media-left" href="#"> <span class="glyphicon glyphicon-user text-info"></span> </a>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New Registration
-                                                        <small class="text-muted"></small>
-                                                    </h5> Michael Sober - 7 hours ago
-                                                </div>
-                                                <div class="media-right">
-                                                    <div class="media-response"> Approve?</div>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-check text-success"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-remove"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="media">
-                                                <a class="media-left" href="#"> <span class="glyphicon glyphicon-usd text-alert"></span> </a>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New Invoice
-                                                        <small class="text-muted"></small>
-                                                    </h5> <a href="#">Apple Ipod</a> - 4 hours ago
 
-                                                </div>
-                                                <div class="media-right">
-                                                    <div class="media-response single">#518358</div>
-                                                </div>
                                             </div>
-                                            <div class="media">
-                                                <a class="media-left" href="#"> <span class="glyphicon glyphicon-shopping-cart text-success"></span> </a>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New Order
-                                                        <small class="text-muted"></small>
-                                                    </h5> <a href="#">Apple Ipod</a> - 4 hours ago
-                                                </div>
-                                                <div class="media-right">
-                                                    <div class="media-response"> Confirm?</div>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-check text-success"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-xs light">
-                                                            <i class="fa fa-print"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
                                         </div>
                                         <div id="nav-tab2" class="tab-pane chat-widget" role="tabpanel">
                                             <div class="media">
