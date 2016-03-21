@@ -170,7 +170,7 @@
                                 <span class="panel-title"> Trailer</span>
                         </div>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" width="640" height="480" src="https://www.youtube-nocookie.com/embed/Lw_e0vF1IB4" frameborder="0" allowfullscreen></iframe>
+                            <iframe class="embed-responsive-item" width="640" height="480" src="{{$trailer}}" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>

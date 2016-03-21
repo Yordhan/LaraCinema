@@ -1,8 +1,11 @@
 @extends('layout')
 @section('content')
-<div class="container">
-    <div class="content">
-        <div class="title">Creation d'une catégorie</div>
+    <h2>
+        <a href="{{route('categories_list')}}">
+            Retour a la liste de catégories
+        </a>
+    </h2>
+        <h1>Creation d'une catégorie</h1>
 
 
         @if(count($errors) > 0)

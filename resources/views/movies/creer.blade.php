@@ -1,12 +1,11 @@
 @extends('layout')
 @section('content')
-<div class="container">
-    <div class="content">
-        <h4>
+
+        <h2>
             <a href="{{route('movies_list')}}">
                 Retour a la liste de films
             </a>
-        </h4>
+        </h2>
         <h1>Creation de film</h1>
         @if(count($errors) > 0)
             <div class="alert alert-danger">
@@ -18,33 +17,6 @@
             </div>
         @endif
 
-        {{--<form method="post" action="{{route('movies_enregistrer')}}">--}}
-            {{--{{ csrf_field() }}--}}
-            {{--<p>--}}
-                {{--<label for="title">Titre</label>--}}
-                {{--<input type="text" name="title" id="title">--}}
-            {{--</p>--}}
-            {{--<p>--}}
-                {{--<label for="image">Image</label>--}}
-                {{--<input type="text" name="image" id="image">--}}
-            {{--</p>--}}
-            {{--<p>--}}
-                {{--<label for="synopsis">Synopsis</label>--}}
-                {{--<textarea id="synopsis" name="synopsis"></textarea>--}}
-            {{--</p>--}}
-
-            {{--<label for="category">Catégorie</label>--}}
-            {{--<select id="category" name="category">--}}
-                {{--@foreach($categories as $category)--}}
-
-                    {{--<option value="{{$category->id}}">{{$category->title}}</option>--}}
-                {{--@endforeach--}}
-            {{--</select>--}}
-
-            {{--<p>--}}
-                {{--<button type="submit">Créer le film</button>--}}
-            {{--</p>--}}
-        {{--</form>--}}
         <form method="post" enctype="multipart/form-data" action="{{route('movies_enregistrer')}}">
             {{ csrf_field() }}
             <div class="panel-body bg-light p25 pb15">
@@ -61,7 +33,7 @@
                     </div>
                     <!-- end section -->
 
-                    <p>
+                    <div class="col-md-12">
                         <strong>Categorie</strong><br/>
                         <select id="category" name="category">
                             @foreach($categories as $category)
@@ -69,7 +41,7 @@
                                 <option value="{{$category->id}}">{{$category->title}}</option>
                             @endforeach
                         </select>
-                    </p>
+                    </div>
 
                     <div class="col-md-12">
                         <label for="synopsis" class="field prepend-icon">Synopsis
@@ -99,15 +71,5 @@
             </div>
 
         </form>
-
-
-
-    </div>
-</div>
-
 @endsection
 
-<p>
-    <label for="image">Image</label>
-    <input type="file" capture="capture" accept="image/*" name="image" id="image">
-</p>

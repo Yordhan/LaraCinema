@@ -79,8 +79,19 @@ class Movies extends Model
         return $moyenneDuree;
     }
 
-    public function categorie() {
-        return-$this->belongsTo('App\Categories');
+
+    /**
+     * Permet de recuperer un trailer aléatoirement
+     */
+    public function getTrailerRand() {
+        $trailer = DB::table('movies')
+            ->select('trailer')
+            ->whereNotNull('trailer')
+            ->orderByRaw('RAND()')
+            ->limit(1)
+            ->get();
+
+            return $trailer[0]->trailer;
     }
 
 }

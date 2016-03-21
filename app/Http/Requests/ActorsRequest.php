@@ -19,7 +19,7 @@ class ActorsRequest extends FormRequest
             //'dob' => 'required|date_format:d/m/Y',
             'dob' => ['required', 'regex:[^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$]'],
             'city' => 'required',
-            'image' => ['required', 'regex:[^^https?:\/\/[0-9a-zA-Z].+\.jpg$]']
+//            'image' => ['required', 'regex:[^^https?:\/\/[0-9a-zA-Z].+\.jpg$]']
         ];
     }
 
@@ -31,8 +31,8 @@ class ActorsRequest extends FormRequest
             //'dob.date_format' => 'La date de naissance doit etre au format j/m/A',
             'dob.regex' => 'La date de naissance doit etre au format YYYY-MM-JJ',
             'city.required' => 'La ville de naissance est obligatoire',
-            'image.required' => 'Une image est obligatoire',
-            'image.regex' => "Le format d'image n'est pas le bon",
+//            'image.required' => 'Une image est obligatoire',
+//            'image.regex' => "Le format d'image n'est pas le bon",
 
 
         ];

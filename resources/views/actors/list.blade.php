@@ -1,9 +1,14 @@
 @extends('layout')
 @section('content')
-        <p>
-            <a href="/">Page d'accueil</a>
-        </p>
-        <h1>Liste des acteur</h1>
+    <h2>
+        <a href="/" style="display:block">Page d'accueil</a>
+    </h2>
+        <h1  style="display: inline-block; margin-right: 16rem";>Liste des acteurs</h1>
+        <h2 style="display: inline-block">
+            <a href="{{route('actors_creer')}}">
+                Créer un acteur
+            </a>
+        </h2>
 
         <div class="panel-body pn">
             <div class="table-responsive">
@@ -52,14 +57,13 @@
                             <td>{{$actor->city}}</td>
                         </tr>
                         @endforeach
+                    </tbody>
 
                 </table>
             </div>
         </div>
     <hr>
-    <a href="{{route('actors_creer')}}">
-        Créer un acteur
-    </a>
+
 
 @endsection
 

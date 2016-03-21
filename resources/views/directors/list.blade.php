@@ -1,9 +1,14 @@
 @extends('layout')
 @section('content')
-        <p>
-            <a href="/">Page d'accueil</a>
-        </p>
-        <div class="title">Liste des realisateurs</div>
+    <h2>
+        <a href="/" style="display:block">Page d'accueil</a>
+    </h2>
+    <h1  style="display: inline-block; margin-right: 16rem";>Liste des réalisateurs</h1>
+    <h2 style="display: inline-block">
+        <a href="{{route('directors_creer')}}">
+            Créer un acteur
+        </a>
+    </h2>
         <div class="panel-body pn">
             <div class="table-responsive">
                 <table class="table admin-form theme-warning tc-checkbox-1 fs13">
@@ -43,9 +48,5 @@
                 </table>
             </div>
         </div>
-    <hr>
-    <a href="{{route('directors_creer')}}">
-        Créer un réalisateur
-    </a>
 
 @endsection

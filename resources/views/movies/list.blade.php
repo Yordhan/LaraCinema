@@ -1,13 +1,16 @@
 @extends('layout')
 @section('content')
-        <a href="/" style="display:block">Page d'accueil</a>
+        <h2>
+            <a href="/" style="display:block">Page d'accueil</a>
+        </h2>
+
 
         <h1 style="display: inline-block; margin-right: 16rem;">Liste de nos films</h1>
-        <h4 style="display: inline-block">
+        <h2 style="display: inline-block">
             <a href="{{route('movies_creer')}}">
                 Créer un film
             </a>
-        </h4>
+        </h2>
         <div class="panel-body pn">
             <div class="table-responsive">
                 <table class="table admin-form theme-warning tc-checkbox-1 fs13">
@@ -91,6 +94,7 @@
 
                     </tr>
                     @endforeach
+
                 </table>
             </div>
         </div>

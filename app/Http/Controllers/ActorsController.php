@@ -65,11 +65,23 @@ class ActorsController extends Controller{
 
 
         $actor = new Actors();
+
+        $file = $request->image;
+        // Si ma requete contient un fichier de name "image"
+
+        if($request->hasFile('image')) {
+            $filename = $file->getClientOriginalName(); // Récupère le nom original du fichier
+            $destinationPath = public_path() . '/uploads/actors'; // Indique ou stocker le fichier
+            $file->move($destinationPath, $filename); // Déplace le fichier
+
+            // ma colonne image qui sera le chemin vers mon fichier
+            $actor->image = asset('uploads/actors/' . $filename);
+        }
+
         $actor->firstname = $firstname;
         $actor->lastname = $lastname;
         $actor->dob = $dob;
         $actor->city = $city;
-        $actor->image = $image;
         $actor->nationality = $nationality;
         $actor->save(); // save() permet de sauvegarder mon objet en bdd
 

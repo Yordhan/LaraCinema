@@ -693,6 +693,12 @@
                             <span class="sidebar-title">Films</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{route('categories_list')}}">
+                            <span class="fa fa-calendar"></span>
+                            <span class="sidebar-title">Catégories</span>
+                        </a>
+                    </li>
                     <li class="sidebar-label pt15">Exclusive Tools</li>
                     <li>
                         <a class="accordion-toggle" href="#">

@@ -27,6 +27,7 @@ class HomeController extends Controller
         $moyenneNote = $movie->getMoyenneNote();
         $moyenneDuree = $movie->getMoyenneDuree();
         $nbMovies = $movie->getNbMovies();
+        $trailer = $movie->getTrailerRand();
 
         $actor = new Actors();
         $nbActors = $actor->getNbActors();
@@ -62,6 +63,7 @@ class HomeController extends Controller
                 'nbMovies' => $nbMovies,
                 'nbDirectors' =>  $nbDirectors,
                 'nbCategories' => $nbCategories,
+                'trailer' => $trailer
 //                'actorByCity' => $actorByCity
             ]);
     }
