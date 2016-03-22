@@ -676,293 +676,74 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('directors_list')}}">
-                            <span class="fa fa-calendar"></span>
+                        <a class="accordion-toggle" href="#">
+                            <span><i class="fa fa-video-camera"></i></span>
                             <span class="sidebar-title">Réalisateurs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('actors_list')}}">
-                            <span class="fa fa-calendar"></span>
-                            <span class="sidebar-title">Acteurs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('movies_list')}}">
-                            <span class="glyphicon glyphicon-book"></span>
-                            <span class="sidebar-title">Films</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('categories_list')}}">
-                            <span class="fa fa-calendar"></span>
-                            <span class="sidebar-title">Catégories</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-label pt15">Exclusive Tools</li>
-                    <li>
-                        <a class="accordion-toggle" href="#">
-                            <span class="fa fa-columns"></span>
-                            <span class="sidebar-title">Layout Templates</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="nav sub-nav">
                             <li>
-                                <a class="accordion-toggle" href="#">
+                                <a href="{{route('directors_list')}}">
                                     <span class="fa fa fa-arrows-h"></span>
-                                    Sidebars
-                                    <span class="caret"></span>
+                                    Liste des réalisateurs
                                 </a>
-                                <ul class="nav sub-nav">
-                                    <li>
-                                        <a href="layout_sidebar-left-static.html">
-                                            Left Static </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_sidebar-left-fixed.html">
-                                            Left Fixed </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_sidebar-left-widgets.html">
-                                            Left Widgets </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_sidebar-left-minified.html">
-                                            Left Minified </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_sidebar-left-light.html">
-                                            Left White </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_sidebar-right-static.html">
-                                            Right Static </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_sidebar-right-fixed.html">
-                                            Right Fixed </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_sidebar-right-menu.html">
-                                            Right w/Menu </a>
-                                    </li>
-                                </ul>
                             </li>
                             <li>
-                                <a class="accordion-toggle" href="#">
+                                <a href="{{route('directors_creer')}}">
                                     <span class="fa fa-arrows-v"></span>
-                                    Navbar
-                                    <span class="caret"></span>
+                                    Creer un réalisateur
                                 </a>
-                                <ul class="nav sub-nav">
-                                    <li>
-                                        <a href="layout_navbar-static.html">
-                                            Navbar Static </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_navbar-fixed.html">
-                                            Navbar Fixed </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_navbar-menus.html">
-                                            Navbar Menus </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_navbar-contextual.html">
-                                            Contextual Example </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_navbar-search-alt.html">
-                                            Search Alt Style </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-toggle" href="#">
-                                    <span class="fa fa-hand-o-up"></span>
-                                    Topbar
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="nav sub-nav">
-                                    <li>
-                                        <a href="layout_topbar.html">
-                                            Default Style </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_topbar-menu.html">
-                                            Default w/Menu </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_topbar-alt.html">
-                                            Alternate Style </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-toggle" href="#">
-                                    <span class="fa fa-arrows-v"></span>
-                                    Content Body
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="nav sub-nav">
-                                    <li>
-                                        <a href="layout_content-blank.html">
-                                            Blank Starter </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_content-fixed.html">
-                                            Fixed Window </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_content-heading.html">
-                                            Content Heading </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_content-tabs.html">
-                                            Content Tabs </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-toggle" href="#">
-                                    <span class="fa fa-pause"></span>
-                                    Content Trays
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="nav sub-nav">
-                                    <li>
-                                        <a href="layout_tray-left.html">
-                                            Tray Left Static </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_tray-left-fixed.html">
-                                            Tray Left Fixed </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_tray-right.html">
-                                            Tray Right Static </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_tray-right-fixed.html">
-                                            Tray Right Fixed </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_tray-both.html">
-                                            Left + Right Static </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_tray-both-fixed.html">
-                                            Left + Right Fixed </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-toggle" href="#">
-                                    <span class="fa fa-plus-square-o"></span>
-                                    Boxed Layout
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="nav sub-nav">
-                                    <li>
-                                        <a href="layout_boxed.html">
-                                            Default </a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_boxed-horizontal.html">
-                                            Horizontal Menu </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="accordion-toggle" href="#">
-                                    <span class="fa fa-arrow-circle-o-up"></span>
-                                    Horizontal Menu
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="nav sub-nav">
-                                    <li>
-                                        <a href="layout_horizontal-sm.html">
-                                            Small Size</a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_horizontal-md.html">
-                                            Medium Size</a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_horizontal-lg.html">
-                                            Large Size</a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_horizontal-light.html">
-                                            Light Skin</a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_horizontal-topbar.html">
-                                            With Topbar</a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_horizontal-topbar-alt.html">
-                                            With Alt Topbar</a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_horizontal-collapsed.html">
-                                            Collapsed onLoad</a>
-                                    </li>
-                                    <li>
-                                        <a href="layout_horizontal-boxed.html">
-                                            In Boxed Layout</a>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a class="accordion-toggle" href="#">
-                            <span class="glyphicon glyphicon-fire"></span>
-                            <span class="sidebar-title">Admin Plugins</span>
+                            <span><i class="fa fa-film"></i></span>
+                            <span class="sidebar-title">Films</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="nav sub-nav">
                             <li>
-                                <a href="admin_plugins-panels.html">
-                                    <span class="glyphicon glyphicon-book"></span> Admin Panels </a>
+                                <a href="{{route('movies_list')}}">
+                                    <span class="glyphicon glyphicon-book"></span> Liste des films </a>
                             </li>
                             <li>
-                                <a href="admin_plugins-modals.html">
-                                    <span class="glyphicon glyphicon-modal-window"></span> Admin Modals </a>
-                            </li>
-                            <li>
-                                <a href="admin_plugins-dock.html">
-                                    <span class="glyphicon glyphicon-equalizer"></span> Admin Dock </a>
+                                <a href="{{route('movies_creer')}}">
+                                    <span class="glyphicon glyphicon-modal-window"></span> Créer un film </a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a class="accordion-toggle" href="#">
-                            <span class="glyphicon glyphicon-check"></span>
-                            <span class="sidebar-title">Admin Forms</span>
+                            <span><i class="fa fa-user-secret"></i></span>
+                            <span class="sidebar-title">Acteurs</span>
                             <span class="caret"></span>
                         </a>
                         <ul class="nav sub-nav">
                             <li>
-                                <a href="admin_forms-elements.html">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span> Admin Elements </a>
+                                <a href="{{route('actors_list')}}">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Liste des acteurs </a>
                             </li>
                             <li>
-                                <a href="admin_forms-widgets.html">
-                                    <span class="glyphicon glyphicon-calendar"></span> Admin Widgets </a>
+                                <a href="{{route('actors_creer')}}">
+                                    <span class="glyphicon glyphicon-calendar"></span> Creer un acteur </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="accordion-toggle" href="#">
+                            <span><i class="fa fa-bars"></i></span>
+                            <span class="sidebar-title">Catégorie de film</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="nav sub-nav">
+                            <li>
+                                <a href="{{route('categories_list')}}">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Liste des catégories </a>
                             </li>
                             <li>
-                                <a href="admin_forms-layouts.html">
-                                    <span class="fa fa-desktop"></span> Admin Layouts </a>
-                            </li>
-                            <li>
-                                <a href="admin_forms-wizard.html">
-                                    <span class="fa fa-clipboard"></span> Admin Wizard </a>
-                            </li>
-                            <li>
-                                <a href="admin_forms-validation.html">
-                                    <span class="glyphicon glyphicon-check"></span> Admin Validation </a>
+                                <a href="{{route('categories_creer')}}">
+                                    <span class="glyphicon glyphicon-calendar"></span> Creer une catégorie </a>
                             </li>
                         </ul>
                     </li>

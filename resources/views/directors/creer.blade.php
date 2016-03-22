@@ -1,62 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
-
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
-
-        .content {
-            text-align: center;
-            display: inline-block;
-        }
-
-        .title {
-            font-size: 96px;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: black;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        ul li {
-            display: inline-block;
-            margin-right: 0.8rem;
-            font-size: 1.8rem;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="content">
-        <div class="title">Creation de réalisateurs</div>
+@extends('layout')
+@section('content')
+    <h2>
+        <a href="{{route('directors_list')}}">
+            Retour a la liste de réalisateurs
+        </a>
+    </h2>
+        <h1>Creation de réalisateurs</h1>
         @if(count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -66,36 +15,56 @@
                 </ul>
             </div>
         @endif
-        <form method="post" action="{{route('directors_enregistrer')}}">
-            {{ csrf_field() }}
-            <p>
-                <label for="firstname">Prenom</label>
-                <input type="text" name="firstname" id="firstname">
-            </p>
 
-            <p>
-                <label for="lastname">Nom</label>
-                <input type="text" name="lastname" id="lastname">
-            </p>
+    <form method="post" enctype="multipart/form-data" action="{{route('directors_enregistrer')}}">
+        {{ csrf_field() }}
+        <div class="panel-body bg-light p25 pb15">
+            <!-- Divider -->
+            <div class="section-divider mv30 hidden">
+                <span>OR</span>
+            </div>
 
-            <p>
-                <label for="dob">Date de naissance</label>
-                <input type="text" name="dob" id="dob" placeholder="YYYY-MM-JJ">
-            </p>
-            <p>
-                <label for="image">Image</label>
-                <input type="text" name="image" id="image">
-            </p>
-            <p>
-                <button type="submit">Créer le realisateur</button>
-            </p>
+            <div class="section row">
+                <div class="col-md-12">
+                    <label for="firstname" class="field prepend-icon">Prenom<br />
+                        <input type="text" name="firstname" id="firstname" class="gui-input">
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <label for="lastname" class="field prepend-icon">Nom<br />
+                        <input type="text" name="lastname" id="lastname" class="gui-input">
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <label for="dob" class="field prepend-icon">Date de naissance<br />
+                        <input type="text" name="dob" id="dob" class="gui-input" placeholder="YYYY-MM-dd">
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <label for="image" class="field prepend-icon">Image<br />
+                        <input type="text" name="image" id="image" class="gui-input">
+                    </label>
+                </div>
 
 
-        </form>
+                <!-- end section -->
+            </div>
+            <!-- end .section row section -->
 
 
 
-    </div>
-</div>
-</body>
-</html>
+            {{--<div class="section">--}}
+                {{--<label for="image">Image</label>--}}
+                {{--<input type="file" capture="capture" accept="image/*" name="image" id="image">--}}
+            {{--</div>--}}
+
+            <!-- end section -->
+        </div>
+
+        <div class="panel-footer clearfix">
+            <button type="submit" class="button btn-primary mr10">Creer le réalisateur</button>
+
+        </div>
+
+    </form>
+@endsection

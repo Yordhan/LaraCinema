@@ -6,7 +6,7 @@
     <h1  style="display: inline-block; margin-right: 16rem";>Liste des réalisateurs</h1>
     <h2 style="display: inline-block">
         <a href="{{route('directors_creer')}}">
-            Créer un acteur
+            Créer un réalisateur
         </a>
     </h2>
         <div class="panel-body pn">
@@ -44,7 +44,7 @@
                             <td>{{$director->dob}}</td>
                         </tr>
                     @endforeach
-
+                    </tbody>
                 </table>
             </div>
         </div>
