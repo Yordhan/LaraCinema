@@ -17,34 +17,43 @@
                 </ul>
             </div>
         @endif
+    <form method="post" enctype="multipart/form-data" action="{{route('categories_enregistrer')}}">
+        {{ csrf_field() }}
+        <div class="panel-body bg-light p25 pb15">
+            <!-- Divider -->
+            <div class="section-divider mv30 hidden">
+                <span>OR</span>
+            </div>
 
-        <form method="post" enctype="multipart/form-data" action="{{route('categories_enregistrer')}}">
+            <div class="section row">
+                <div class="col-md-12">
+                    <label for="title" class="field prepend-icon">Titre<br />
+                        <input type="text" name="title" id="title" class="gui-input">
+                    </label>
+                </div>
+                <div class="col-md-12">
+                    <label for="description" class="field prepend-icon">Description<br />
+                        <input type="text" name="description" id="description" class="gui-input">
+                    </label>
+                </div>
+                <!-- end section -->
 
-            {{ csrf_field() }}
-            <p>
-                <label for="title">Titre</label>
-                <input type="text" name="title" id="title">
-            </p>
+                <!-- end section -->
+            </div>
+            <!-- end .section row section -->
 
-            <p>
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description">
-            </p>
-
-            <p>
+            <div class="section">
                 <label for="image">Image</label>
                 <input type="file" capture="capture" accept="image/*" name="image" id="image">
-            </p>
+            </div>
+            <!-- end section -->
+        </div>
 
+        <div class="panel-footer clearfix">
+            <button type="submit" class="button btn-primary mr10">Creer la catégorie</button>
 
-            <p>
-                <button type="submit">Créer la catégorie</button>
-            </p>
+        </div>
 
+    </form>
 
-        </form>
-
-
-
-    </div>
 @endsection
