@@ -38,10 +38,12 @@ class MoviesController extends Controller{
         // debuggue mon id
         //dump($id);
         $movie = Movies::find($id);
+        $categories = Categories::all();
         // retourne une vue
         return view("movies/editer" , [
             'id' => $id,
-            'movie' => $movie
+            'movie' => $movie,
+            'categories' => $categories
         ]);
     }
 
@@ -98,6 +100,8 @@ class MoviesController extends Controller{
         //redirection a partir de ma route
         return Redirect::route('movies_list');
     }
+
+
 
 
     /**

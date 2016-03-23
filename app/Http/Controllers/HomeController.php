@@ -1,24 +1,32 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: machine
- * Date: 15/03/16
- * Time: 14:25
- */
 
 namespace App\Http\Controllers;
+
 use App\Actors;
 use App\Categories;
-use App\Directors;
-use App\Movies;
 use App\Comments;
+use App\Directors;
+use App\Http\Requests;
+use App\Movies;
 use App\Users;
-
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     /**
-     * Page d'accueil
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function homepage(){
         $movie = new Movies();
@@ -68,4 +76,3 @@ class HomeController extends Controller
             ]);
     }
 }
-

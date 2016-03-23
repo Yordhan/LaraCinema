@@ -520,8 +520,8 @@
                 </li>
                 <li class="dropdown menu-merge">
                     <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
-                        <img src="assets/img/avatars/1.jpg" alt="avatar" class="mw30 br64">
-                        <span class="hidden-xs pl15"> Yordhan .S </span>
+                        <img src="{{Auth::user()->photo }}" alt="avatar" class="mw30 br64">
+                        <span class="hidden-xs pl15"> {{Auth::user()->firstname }} </span>
                         <span class="caret caret-tp hidden-xs"></span>
                     </a>
                     <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
@@ -567,7 +567,7 @@
                                 <span class="fa fa-gear"></span> Settings </a>
                         </li>
                         <li class="dropdown-footer">
-                            <a href="#" class="">
+                            <a href="{{url('logout')}}" class="">
                                 <span class="fa fa-power-off pr5"></span> Logout </a>
                         </li>
                     </ul>
@@ -606,13 +606,13 @@
                     <div class="sidebar-widget author-widget">
                         <div class="media">
                             <a class="media-left" href="#">
-                                <img src="assets/img/avatars/3.jpg" class="img-responsive">
+                                <img src="{{ Auth::user()->photo }}" class="img-responsive">
                             </a>
                             <div class="media-body">
                                 <div class="media-links">
                                     <a href="#" class="sidebar-menu-toggle">User Menu -</a> <a href="pages_login(alt).html">Logout</a>
                                 </div>
-                                <div class="media-author">Yordhan Stephanazzi</div>
+                                <div class="media-author">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }} </div>
                             </div>
                         </div>
                     </div>
@@ -674,6 +674,27 @@
                             <span class="glyphicon glyphicon-home"></span>
                             <span class="sidebar-title">Dashboard</span>
                         </a>
+                    </li>
+                    <li>
+                        <a class="accordion-toggle" href="#">
+                            <span><i class="fa fa-video-camera"></i></span>
+                            <span class="sidebar-title">Mon compte</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="nav sub-nav">
+                            <li>
+                                <a href="/compte">
+                                    <span class="fa fa fa-arrows-h"></span>
+                                    Voir mon compte
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('directors_creer')}}">
+                                    <span class="fa fa-arrows-v"></span>
+                                    Modifier les informations
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a class="accordion-toggle" href="#">

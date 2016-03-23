@@ -40,6 +40,11 @@ Route::group(['middleware' => ['web']], function () {
 
         return view('statique/apropos');
     });
+
+    Route::get('/compte', function () {
+
+        return view('statique/compte');
+    });
 });
 
 
@@ -69,6 +74,8 @@ Route::group(['middleware' => ['web']], function () {
             'as' => 'movies_enregistrer',
             'uses' => 'MoviesController@enregistrer'
         ]);
+
+
 
         Route::get('/visible/{id}', [
             'as' => 'movies_visible',
@@ -224,4 +231,10 @@ Route::group(['middleware' => ['web']], function () {
 */
 
     //
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });

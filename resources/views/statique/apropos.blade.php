@@ -61,6 +61,7 @@
             <li><a href="/">Welcome</a></li>
             <li><a href="contact">Contact</a></li>
             <li><a href="concept">Concept</a></li>
+            {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
 
         </ul>
 

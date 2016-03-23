@@ -84,14 +84,20 @@ class Movies extends Model
      * Permet de recuperer un trailer aléatoirement
      */
     public function getTrailerRand() {
-        $trailer = DB::table('movies')
-            ->select('trailer')
-            ->whereNotNull('trailer')
-            ->orderByRaw('RAND()')
-            ->limit(1)
+//        $trailer = DB::table('movies')
+//            ->select('trailer')
+//            ->whereNotNull('trailer')
+//            ->orderByRaw('RAND()')
+//            ->limit(1)
+//            ->get();
+//
+//            return $trailer[0]->trailer;
+
+        $trailer = Movies::orderBy(DB::raw("RAND()"))
+            ->take(1)
             ->get();
 
-            return $trailer[0]->trailer;
+        return $trailer;
     }
 
 }

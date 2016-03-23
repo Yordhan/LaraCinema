@@ -1,64 +1,74 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel</title>
+@extends('layout')
+@section('content')
+    <h2>
+        <a href="{{route('movies_list')}}">
+            Retour a la liste de films
+        </a>
+    </h2>
+    <h1>Editer le film {{$movie->title}}</h1>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-    <style>
-        html, body {
-            height: 100%;
-        }
+    <form method="post" enctype="multipart/form-data" action="">
+        {{ csrf_field() }}
+        <div class="panel-body bg-light p25 pb15">
+            <!-- Divider -->
+            <div class="section-divider mv30 hidden">
+                <span>OR</span>
+            </div>
 
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
+            <div class="section row">
+                <div class="col-md-12">
+                    <label for="title" class="field prepend-icon">Titre<br />
+                        <input type="text" name="title" id="title" class="gui-input" placeholder="Titre du film...">
+                    </label>
+                </div>
+                <!-- end section -->
 
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
+                <div class="col-md-12">
+                    <strong>Categorie</strong><br/>
+                    <select id="category" name="category">
+                        @foreach($categories as $category)
 
-        .content {
-            text-align: center;
-            display: inline-block;
-        }
+                            <option value="{{$category->id}}">{{$category->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
 
-        .title {
-            font-size: 96px;
-        }
+                <div class="col-md-12">
+                    <label for="synopsis" class="field prepend-icon">Synopsis
+                        <textarea class="form-control" rows="3" name="synopsis" id="synopsis" ></textarea>
+                    </label>
+                </div>
+                <!-- end section -->
+            </div>
+            <!-- end .section row section -->
 
-        a {
-            text-decoration: none;
-        }
+            {{--<div class="section">--}}
+            {{--<label for="image" class="field prepend-icon">Image<br />--}}
+            {{--<input type="text" name="image" id="image" class="gui-input">--}}
+            {{--</label>--}}
+            {{--</div>--}}
 
-        a:visited {
-            color: black;
-        }
+            <div class="section">
+                <label for="image">Image</label>
+                <input type="file" capture="capture" accept="image/*" name="image" id="image">
+            </div>
+            <!-- end section -->
+        </div>
 
-        ul {
-            list-style-type: none;
-        }
+        <div class="panel-footer clearfix">
+            <button type="submit" class="button btn-primary mr10">Creer le film</button>
 
-        ul li {
-            display: inline-block;
-            margin-right: 0.8rem;
-            font-size: 1.8rem;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="content">
-        <div class="title">Editer le film {{$movie->title}}</div>
+        </div>
 
-    </div>
-</div>
-</body>
-</html>
+    </form>
+@endsection
